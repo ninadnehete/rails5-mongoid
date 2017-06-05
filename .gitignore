@@ -17,3 +17,9 @@
 /yarn-error.log
 
 .byebug_history
+
+### Mac system files # 
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
