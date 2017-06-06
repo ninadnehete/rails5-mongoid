@@ -37,3 +37,20 @@ $ rails new rails5-mongoid --skip-bundle --skip-active-record --skip-test --skip
   * `--skip-bundle`: We will be running `bundle install` after tweaking the gemfile
   * `--skip-active-record`: Active record is for sql based databases, however we will be using the mongodb database.
   * `--skip-test` and `--skip-system-test`: We will have using rspec and cucumber for out tests.
+
+## Source Control with Git
+The following steps are to set up a git repository for source control. Skip this section if you are building a throw-away app for education. Of course, if you have an aversion to git, there are other version control options such as [Mercurial](https://www.mercurial-scm.org/) and [Subversion](http://subversion.apache.org/).
+*`$ git init .`
+* `$ git add .`
+* `$ git commit -m 'Initial commit'`
+* Create a remote repository. There are several options.
+	* On GitHub. Here are [instructions](https://help.github.com/articles/create-a-repo/) if you need help. The README file is optional.
+	* Follow steps [8 and 9](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to push your local repository to GitHub.
+	**OR** you could use [BitBucket](https://bitbucket.org/) or one of the [many other](https://www.git-tower.com/blog/git-hosting-services-compared/) git hosting options
+
+
+### Mongodb
+* If Mongodb is not yet installed, follow the [installation guide](https://docs.mongodb.com/manual/administration/install-community/) to install it.
+* Add the [mongoid gem](https://docs.mongodb.com/mongoid/master/tutorials/mongoid-installation/) to the Gemfile `gem 'mongoid', '~> 6.1.0'`
+* Generate the configuration file `$ rails g mongoid:config`
+
