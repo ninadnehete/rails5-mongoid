@@ -48,9 +48,9 @@ The following steps are to set up a git repository for source control. Skip this
 	* Follow steps [8 and 9](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to push your local repository to GitHub.
 	* **OR** you could use [BitBucket](https://bitbucket.org/) or one of the [many other](https://www.git-tower.com/blog/git-hosting-services-compared/) git hosting options
 
-
 ### Mongodb
 * If Mongodb is not yet installed, follow the [installation guide](https://docs.mongodb.com/manual/administration/install-community/) to install it.
 	* Add the [mongoid gem](https://docs.mongodb.com/mongoid/master/tutorials/mongoid-installation/) to the Gemfile `gem 'mongoid', '~> 6.1.0'`
+	* `$ bundle install`
 	* Generate the configuration file `$ rails g mongoid:config`
 
