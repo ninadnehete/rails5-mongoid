@@ -46,7 +46,7 @@ The following steps are to set up a git repository for source control. Skip this
 * Create a remote repository. There are several options.
 	* On GitHub. Here are [instructions](https://help.github.com/articles/create-a-repo/) if you need help. The README file is optional.
 	* Follow steps [8 and 9](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to push your local repository to GitHub.
-	**OR** you could use [BitBucket](https://bitbucket.org/) or one of the [many other](https://www.git-tower.com/blog/git-hosting-services-compared/) git hosting options
+	* **OR** you could use [BitBucket](https://bitbucket.org/) or one of the [many other](https://www.git-tower.com/blog/git-hosting-services-compared/) git hosting options
 
 
 ### Mongodb
