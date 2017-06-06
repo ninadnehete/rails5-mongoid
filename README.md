@@ -51,6 +51,6 @@ The following steps are to set up a git repository for source control. Skip this
 
 ### Mongodb
 * If Mongodb is not yet installed, follow the [installation guide](https://docs.mongodb.com/manual/administration/install-community/) to install it.
-* Add the [mongoid gem](https://docs.mongodb.com/mongoid/master/tutorials/mongoid-installation/) to the Gemfile `gem 'mongoid', '~> 6.1.0'`
-* Generate the configuration file `$ rails g mongoid:config`
+	* Add the [mongoid gem](https://docs.mongodb.com/mongoid/master/tutorials/mongoid-installation/) to the Gemfile `gem 'mongoid', '~> 6.1.0'`
+	* Generate the configuration file `$ rails g mongoid:config`
 
