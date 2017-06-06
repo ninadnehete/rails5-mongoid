@@ -34,8 +34,8 @@ $ rails new rails5-mongoid --skip-bundle --skip-active-record --skip-test --skip
 **Explanation:**
   * The `$` will be used in this tutorial for the command prompt and is not to be typed.
   * `rails5-mongoid` is the name that I chose to call the app. You may specify a different name.
-  * `--skip-bundle`: We will be running `bundle install` after tweaking the gemfile
-  * `--skip-active-record`: Active record is for sql based databases, however we will be using the mongodb database.
+  * `--skip-bundle` We will be running `bundle install` after tweaking the gemfile
+  * `--skip-active-record` Active record is for sql based databases, however we will be using the mongodb database.
   * `--skip-test` and `--skip-system-test`: We will have using rspec and cucumber for out tests.
 
 ## Source Control with Git
@@ -53,4 +53,35 @@ The following steps are to set up a git repository for source control. Skip this
 * Add the [mongoid gem](https://docs.mongodb.com/mongoid/master/tutorials/mongoid-installation/) to the Gemfile `gem 'mongoid', '~> 6.1.0'`
 	* `$ bundle install`
 	* Generate the configuration file `$ rails g mongoid:config`
+
+### Add gems for testing
+* Add and adjust the `Gemfile` to include the following gems.
+	* [rspec-rails](https://rubygems.org/gems/rspec-rails) `gem 'rspec-rails', '~> 3.6'`
+	* [capybara](https://rubygems.org/gems/capybara) `gem 'capybara', '~> 2.14'`
+	* [database_cleaner](https://rubygems.org/gems/database_cleaner) `gem 'database_cleaner', '~> 1.6', '>= 1.6.1'`
+	* [mongoid-rspec](https://github.com/mongoid-rspec/mongoid-rspec)`gem 'mongoid-rspec', git: 'https://github.com/mongoid-rspec/mongoid-rspec.git'`
+		* Note at the time of writing the git master branch has been updated to include support for mongoid 6. However, the official release of 3.0.0 only supports through mongoid 5.
+	* [cucumber-rails](https://rubygems.org/gems/cucumber-rails) `gem 'cucumber-rails', '~> 1.5'`
+	* [factory_girl_rails](https://rubygems.org/gems/factory_girl_rails) `gem 'factory_girl_rails', '~> 4.8'`
+	* [email_spec](https://rubygems.org/gems/email_spec/versions/2.1.0)`gem 'email_spec', '~> 2.1'`
+
+The above gems will need to be grouped as follows in the Gemfile.
+
+```
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails', '~> 4.8'
+end
+
+group :test do
+  gem 'capybara', '~> 2.14'
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.1'
+  gem 'mongoid-rspec', git: 'https://github.com/mongoid-rspec/mongoid-rspec.git'
+  gem 'email_spec', '~> 2.1'
+  gem 'cucumber-rails', '~> 1.5'
+end
+```
+
 
