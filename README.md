@@ -32,7 +32,7 @@ $ rails new rails5-mongoid --skip-bundle --skip-active-record --skip-test --skip
 ```
 
 **Explanation:**
-  * The `$` will be used in this tutorial for the command prompt and it not to be typed.
+  * The `$` will be used in this tutorial for the command prompt and is not to be typed.
   * `rails5-mongoid` is the name that I chose to call the app. You may specify a different name.
   * `--skip-bundle`: We will be running `bundle install` after tweaking the gemfile
   * `--skip-active-record`: Active record is for sql based databases, however we will be using the mongodb database.
