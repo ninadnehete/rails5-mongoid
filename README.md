@@ -38,7 +38,7 @@ $ rails new rails5-mongoid --skip-bundle --skip-active-record --skip-test --skip
   * `--skip-active-record` Active record is for sql based databases, however we will be using the mongodb database.
   * `--skip-test` and `--skip-system-test`: We will have using rspec and cucumber for out tests.
 
-## Source Control with Git
+### Source Control with Git
 The following steps are to set up a git repository for source control. Skip this section if you are building a throw-away app for education. Of course, if you have an aversion to git, there are other version control options such as [Mercurial](https://www.mercurial-scm.org/) and [Subversion](http://subversion.apache.org/).
 *`$ git init .`
 * `$ git add .`
