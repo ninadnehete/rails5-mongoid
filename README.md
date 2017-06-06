@@ -83,5 +83,6 @@ group :test do
   gem 'cucumber-rails', '~> 1.5'
 end
 ```
+Run `$ bundle install` to install the new gems. Next we will configure these gems.
 
 
