@@ -1,6 +1,3 @@
-
-Version 0.0.16
-
 MIT License
 
 Copyright (c) 2017 Brian Wilson
