@@ -55,6 +55,8 @@ The following steps are to set up a git repository for source control. Skip this
 	* Generate the configuration file `$ rails g mongoid:config`
 
 ### Add gems for testing
+We will be using [Test Driven Developement](https://www.agilealliance.org/glossary/tdd/) in this app.
+
 * Add and adjust the `Gemfile` to include the following gems.
 	* [rspec-rails](https://rubygems.org/gems/rspec-rails) `gem 'rspec-rails', '~> 3.6'`
 	* [capybara](https://rubygems.org/gems/capybara) `gem 'capybara', '~> 2.14'`
@@ -73,16 +75,37 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails', '~> 4.8'
+  gem 'cucumber-rails', '~> 1.5', :require => false
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.1'
 end
 
 group :test do
   gem 'capybara', '~> 2.14'
-  gem 'database_cleaner', '~> 1.6', '>= 1.6.1'
   gem 'mongoid-rspec', git: 'https://github.com/mongoid-rspec/mongoid-rspec.git'
   gem 'email_spec', '~> 2.1'
-  gem 'cucumber-rails', '~> 1.5'
 end
 ```
 Run `$ bundle install` to install the new gems. Next we will configure these gems.
 
+#### Rspec [Configuration](https://github.com/rspec/rspec-rails)
+* `https://github.com/rspec/rspec-rails`
+  * This generates several the necessary files to run rspec tests
+* Add the following line to the top of the `.rspec` file
+  * `--color`
+  * This adds color output for when rspec is run from the terminal. We will be setting up Travis CI to run the tests automatically, however the --color option is
+  nice for local debugging of tests which are run from the command line via `bundle exec rspec`.
+
+#### FactoryGirl [Configuration](https://github.com/thoughtbot/factory_girl_rails)
+* Add the file `/spec/factories.rb` with the following code.
+  ```
+  FactoryGirl.define do
+    # factories will go here
+  end
+  ```
+
+#### Cucumber [Configuration](https://cucumber.io/docs/reference/rails)
+* Run the installation code `rails generate cucumber:install`
+* Cucumber tests can be run from the command line with either of the following commands, however, we will be setting up Travis CI to run the tests automatically
+  * `bundle exec cucumber`
+  * `rake cucumber`
 
