@@ -109,3 +109,35 @@ Run `$ bundle install` to install the new gems. Next we will configure these gem
   * `bundle exec cucumber`
   * `rake cucumber`
 
+#### database_cleaner [Configuration](https://github.com/DatabaseCleaner/database_cleaner)
+* This [Step by step guide](http://www.virtuouscode.com/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/) is most helpful.
+* Create a file called `spec/support/database_cleaner.rb` and add the following code
+
+```ruby
+RSpec.configure do |config|
+  
+  config.use_transactional_fixtures = false
+ 
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+ 
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+ 
+  config.before(:each, :js => true) do
+    DatabaseCleaner.strategy = :truncation
+  end
+ 
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+ 
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+end
+```
+
+
