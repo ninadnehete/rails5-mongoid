@@ -61,3 +61,7 @@ jobs:
     - name: Install yarn packages
       run: |
         yarn install --pure-lockfile
+
+    - name: "Run rspec tests"
+      run: bin/rspec
+    
